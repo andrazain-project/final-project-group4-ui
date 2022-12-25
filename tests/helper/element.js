@@ -1,9 +1,9 @@
-export function get(selector){
-    return cy.get(selector)
+export function get(selector) {
+  return cy.get(selector);
 }
 
-export function fillfield(selector, value){
-    return cy.get(selector).clear().type(value).should('have.value',value);
+export function fillField(selector, value) {
+  return cy.get(selector).clear().type(value).should("have.value", value);
 }
 
 // export function click(selector) {
@@ -14,10 +14,10 @@ export function fillfield(selector, value){
 //     });
 // }
 
-export function click(selector){
-    return cy.get(selector).click()
+export function click(selector) {
+  return cy.get(selector).click();
 }
 
-export function clickOpt(selector, selector1){
-    return cy.get(selector).select(selector1)
+export function clickOpt(selector, selector1) {
+  return cy.get(selector).select(selector1);
 }

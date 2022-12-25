@@ -25,10 +25,10 @@ describe("Add Customer Test", () => {
     assert.shouldBeVisible(addCustomerPage.addCustomerButton);
   });
 
-  it("Ensure success alert displayed with customer id when user entered valid data", () => {
-    element.fillfield(addCustomerPage.firstNameField, addCustomerData.FIRST_NAME);
-    element.fillfield(addCustomerPage.lastNameField, addCustomerData.LAST_NAME);
-    element.fillfield(addCustomerPage.postCodeField, addCustomerData.POST_CODE);
+  it("Ensure success add customer alert displayed with customer id when user entered valid data", () => {
+    element.fillField(addCustomerPage.firstNameField, addCustomerData.FIRST_NAME);
+    element.fillField(addCustomerPage.lastNameField, addCustomerData.LAST_NAME);
+    element.fillField(addCustomerPage.postCodeField, addCustomerData.POST_CODE);
     element.click(addCustomerPage.addCustomerButton);
     const custId = Number(window.localStorage.getItem("maxUserId")) + 1;
     assert.displayAlert("Customer added successfully with customer id :" + custId);
@@ -39,19 +39,31 @@ describe("Add Customer Test", () => {
     });
   });
 
-  //   it("Ensure error alert displayed when user user entered empty data", () => {
-  //     element.fillfield(addCustomerPage.lastNameField, addCustomerData.LAST_NAME);
-  //     element.fillfield(addCustomerPage.postCodeField, addCustomerData.POST_CODE);
-  //     element.click(addCustomerPage.addCustomerButton);
-  //     cy.get('#item:invalid')
-  //     .invoke('prop', 'validationMessage')
-  //     .should('equal', 'Please fill out this field.');
-  //   });
+  it("Ensure error alert displayed on first name field when user try to add customer without inputing fist name", () => {
+    element.fillField(addCustomerPage.lastNameField, addCustomerData.LAST_NAME);
+    element.fillField(addCustomerPage.postCodeField, addCustomerData.POST_CODE);
+    element.click(addCustomerPage.addCustomerButton);
+    assert.msgShouldEqual(addCustomerPage.form, addCustomerPage.firstNameField, "Please fill out this field.");
+  });
+
+  it("Ensure error alert displayed on last name field when user try to add customer without inputing last name", () => {
+    element.fillField(addCustomerPage.firstNameField, addCustomerData.FIRST_NAME);
+    element.fillField(addCustomerPage.postCodeField, addCustomerData.POST_CODE);
+    element.click(addCustomerPage.addCustomerButton);
+    assert.msgShouldEqual(addCustomerPage.form, addCustomerPage.lastNameField, "Please fill out this field.");
+  });
+
+  it("Ensure error alert displayed on post code field when user try to add customer without inputing post code", () => {
+    element.fillField(addCustomerPage.firstNameField, addCustomerData.FIRST_NAME);
+    element.fillField(addCustomerPage.lastNameField, addCustomerData.LAST_NAME);
+    element.click(addCustomerPage.addCustomerButton);
+    assert.msgShouldEqual(addCustomerPage.form, addCustomerPage.postCodeField, "Please fill out this field.");
+  });
 
   it("Ensure error alert displayed when user entered registered data", () => {
-    element.fillfield(addCustomerPage.firstNameField, addCustomerData.registered.regFName);
-    element.fillfield(addCustomerPage.lastNameField, addCustomerData.registered.regLName);
-    element.fillfield(addCustomerPage.postCodeField, addCustomerData.registered.regPCode);
+    element.fillField(addCustomerPage.firstNameField, addCustomerData.registered.regFName);
+    element.fillField(addCustomerPage.lastNameField, addCustomerData.registered.regLName);
+    element.fillField(addCustomerPage.postCodeField, addCustomerData.registered.regPCode);
     element.click(addCustomerPage.addCustomerButton);
     assert.displayAlert("Please check the details. Customer may be duplicate.");
   });

@@ -22,7 +22,19 @@ describe("Customers", () => {
     assert.shouldBeVisible(customersPage.searchCustomerField);
   });
 
-  // it("Ensure first name column sorted when clicked", () => {
-  //     element.click(customersPage.sortyByFirstName)
-  // });
+  it("Ensure user is able to search customer data", () => {
+    element.fillField(customersPage.searchCustomerField, "Hermoine");
+    assert.shouldContainText("tbody", "Hermoine");
+  });
+
+  it("Ensure user is able to delete customer data", () => {
+    const fNamefRow = cy.get(customersPage.firstNamefirstRow).invoke('val')
+    assert.shouldContainText("tbody", "Hermoine");
+    element.click((customersPage.deleteButton)+":first")
+    assert.shouldNotContainText("tbody", "Hermoine");
+  });
+
+  it("Ensure first name column sorted when clicked", () => {
+      element.click(customersPage.sortyByFirstName)
+  });
 });
