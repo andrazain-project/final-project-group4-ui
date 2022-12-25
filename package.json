@@ -14,5 +14,8 @@
   "scripts": {
     "cy:open": "cypress open",
     "cy:run": "cypress run"
+  },
+  "devDependencies": {
+    "cypress-localstorage-commands": "^2.2.2"
   }
 }
