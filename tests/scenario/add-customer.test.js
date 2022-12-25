@@ -15,16 +15,6 @@ describe("Add Customer Test", () => {
     routes.visit(ROUTES.addCustomer);
   });
 
-  it("Ensure all components are visible", () => {
-    assert.shouldContainText("label", "First Name");
-    assert.shouldContainText("label", "Last Name");
-    assert.shouldContainText("label", "Post Code");
-    assert.shouldBeVisible(addCustomerPage.firstNameField);
-    assert.shouldBeVisible(addCustomerPage.lastNameField);
-    assert.shouldBeVisible(addCustomerPage.postCodeField);
-    assert.shouldBeVisible(addCustomerPage.addCustomerButton);
-  });
-
   it("Ensure success add customer alert displayed with customer id when user entered valid data", () => {
     element.fillField(addCustomerPage.firstNameField, addCustomerData.FIRST_NAME);
     element.fillField(addCustomerPage.lastNameField, addCustomerData.LAST_NAME);

@@ -14,14 +14,6 @@ describe("Open Account Test", () => {
     routes.visit(ROUTES.openAccount);
   });
 
-  it("Ensure all components are visible", () => {
-    assert.shouldContainText("label", "Customer :");
-    assert.shouldContainText("label", "Currency :");
-    assert.shouldBeVisible(openAccountPage.customerNameOpt);
-    assert.shouldBeVisible(openAccountPage.currencyOpt);
-    assert.shouldBeVisible(openAccountPage.processButton);
-  });
-
   it("Ensure success alert displayed when user successfully open account", () => {
     element.clickOpt(openAccountPage.customerNameOpt, "Hermoine Granger");
     element.clickOpt(openAccountPage.currencyOpt, "Pound");
