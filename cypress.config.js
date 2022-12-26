@@ -4,7 +4,7 @@ const browserify = require("@cypress/browserify-preprocessor");
 module.exports = defineConfig({
   viewportHeight: 660,
   viewportWidth: 1000,
-  video: true,
+  video: false,
   chromeWebSecurity: false,
   defaultCommandTimeout: 10000,
   env: {

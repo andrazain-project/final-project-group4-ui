@@ -34,7 +34,7 @@ describe("As a user, i can deposit some of the amount money", () => {
         //deposit the money
         element.click(loginPage.deposit);
         element.click(depositMenu.amountToBeDeposit);
-        element.fillfield(depositMenu.amountToBeDeposit, dataDeposit.DEPOSIT_AMOUNT.dollar);
+        element.fillField(depositMenu.amountToBeDeposit, dataDeposit.DEPOSIT_AMOUNT.dollar);
         element.click(depositMenu.depositButton);
 
         //assert the successfull
@@ -55,7 +55,7 @@ describe("As a user, i can deposit some of the amount money", () => {
         //deposit the money
         element.click(loginPage.deposit);
         element.click(depositMenu.amountToBeDeposit);
-        element.fillfield(depositMenu.amountToBeDeposit, dataDeposit.DEPOSIT_AMOUNT.pound);
+        element.fillField(depositMenu.amountToBeDeposit, dataDeposit.DEPOSIT_AMOUNT.pound);
         element.click(depositMenu.depositButton);
 
         //assert the successfull
@@ -76,7 +76,7 @@ describe("As a user, i can deposit some of the amount money", () => {
         //deposit the money
         element.click(loginPage.deposit);
         element.click(depositMenu.amountToBeDeposit);
-        element.fillfield(depositMenu.amountToBeDeposit, dataDeposit.DEPOSIT_AMOUNT.rupee);
+        element.fillField(depositMenu.amountToBeDeposit, dataDeposit.DEPOSIT_AMOUNT.rupee);
         element.click(depositMenu.depositButton);
 
         //assert the successfull
@@ -103,7 +103,7 @@ describe("As a user, i can deposit some of the amount money", () => {
         //deposit the money
         element.click(loginPage.deposit);
         element.click(depositMenu.amountToBeDeposit);
-        element.fillfield(depositMenu.amountToBeDeposit, dataDeposit.DEPOSIT_AMOUNT.dollar);
+        element.fillField(depositMenu.amountToBeDeposit, dataDeposit.DEPOSIT_AMOUNT.dollar);
         element.click(depositMenu.depositButton);
 
         //assert the successfull
@@ -114,7 +114,7 @@ describe("As a user, i can deposit some of the amount money", () => {
         element.click(loginPage.deposit);
         cy.wait(3000);
         element.click(loginPage.withdrawl);
-        element.fillfield2(withdrawlMenu.amountToBeWithdrawl, dataWithdrawl.WITHDRAWL_AMOUNT.dollar);
+        element.fillField(withdrawlMenu.amountToBeWithdrawl, dataWithdrawl.WITHDRAWL_AMOUNT.dollar);
         element.click(withdrawlMenu.withdrawlButton);
 
         //assert the successfull
@@ -136,7 +136,7 @@ describe("As a user, i can deposit some of the amount money", () => {
         //deposit the money
         element.click(loginPage.deposit);
         element.click(depositMenu.amountToBeDeposit);
-        element.fillfield(depositMenu.amountToBeDeposit, dataDeposit.DEPOSIT_AMOUNT.pound);
+        element.fillField(depositMenu.amountToBeDeposit, dataDeposit.DEPOSIT_AMOUNT.pound);
         element.click(depositMenu.depositButton);
 
         //assert the successfull
@@ -147,7 +147,7 @@ describe("As a user, i can deposit some of the amount money", () => {
         element.click(loginPage.deposit);
         cy.wait(3000);
         element.click(loginPage.withdrawl);
-        element.fillfield2(withdrawlMenu.amountToBeWithdrawl, dataWithdrawl.WITHDRAWL_AMOUNT.pound);
+        element.fillField(withdrawlMenu.amountToBeWithdrawl, dataWithdrawl.WITHDRAWL_AMOUNT.pound);
         element.click(withdrawlMenu.withdrawlButton);
 
         //assert the successfull
@@ -174,7 +174,7 @@ describe("As a user, i can deposit some of the amount money", () => {
         //deposit the money
         element.click(loginPage.deposit);
         element.click(depositMenu.amountToBeDeposit);
-        element.fillfield(depositMenu.amountToBeDeposit, dataDeposit.DEPOSIT_AMOUNT.rupee);
+        element.fillField(depositMenu.amountToBeDeposit, dataDeposit.DEPOSIT_AMOUNT.rupee);
         element.click(depositMenu.depositButton);
 
         //assert the successfull
@@ -185,7 +185,7 @@ describe("As a user, i can deposit some of the amount money", () => {
         element.click(loginPage.deposit);
         cy.wait(3000);
         element.click(loginPage.withdrawl);
-        element.fillfield2(withdrawlMenu.amountToBeWithdrawl, dataWithdrawl.WITHDRAWL_AMOUNT.rupee);
+        element.fillField(withdrawlMenu.amountToBeWithdrawl, dataWithdrawl.WITHDRAWL_AMOUNT.rupee);
         element.click(withdrawlMenu.withdrawlButton);
 
         //assert the successfull
