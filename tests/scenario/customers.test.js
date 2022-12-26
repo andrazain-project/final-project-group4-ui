@@ -19,13 +19,8 @@ describe("Customers", () => {
   });
 
   it("Ensure user is able to delete customer data", () => {
-    const fNamefRow = cy.get(customersPage.firstNamefirstRow).invoke("val");
     assert.shouldContainText("tbody", "Hermoine");
     element.click(customersPage.deleteButton + ":first");
     assert.shouldNotContainText("tbody", "Hermoine");
-  });
-
-  it("Ensure first name column sorted when clicked", () => {
-    element.click(customersPage.sortyByFirstName);
   });
 });

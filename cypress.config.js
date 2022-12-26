@@ -1,10 +1,10 @@
 const { defineConfig } = require("cypress");
-const browserify = require('@cypress/browserify-preprocessor');
+const browserify = require("@cypress/browserify-preprocessor");
 
 module.exports = defineConfig({
   viewportHeight: 660,
   viewportWidth: 1000,
-  video: false,
+  video: true,
   chromeWebSecurity: false,
   defaultCommandTimeout: 10000,
   env: {
@@ -16,16 +16,16 @@ module.exports = defineConfig({
       // implement node event listeners here
       let options = browserify.defaultOptions;
       options.browserifyOptions.transform[1][1].plugins.push([
-        'module-resolver',
+        "module-resolver",
         {
           alias: {
-            '@tests' : './tests',
-            '@helper' : './tests/helper'
+            "@tests": "./tests",
+            "@helper": "./tests/helper"
           }
         }
       ]);
-      on('file:preprocessor', browserify(options));
+      on("file:preprocessor", browserify(options));
     },
-    specPattern: 'tests/scenario/**/*.test.js'
-  },
+    specPattern: "tests/scenario/**/*.test.js"
+  }
 });
