@@ -6,6 +6,10 @@ export function fillfield(selector, value){
     return cy.get(selector).clear().type(value).should('have.value',value);
 }
 
+export function fillfield2(selector, value){
+    return cy.get(selector).clear().type(value);
+}
+
 // export function click(selector) {
 //     cy.get(selector).then(($el) => {
 //         $el.click((event) => {
