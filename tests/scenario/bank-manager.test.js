@@ -26,16 +26,34 @@ describe("Bank Manager Test", () => {
 
   it("Ensure the user is able to redirect to add customer page when user clicks add customer button", () => {
     element.click(bankManagerPage.addCustomerButton);
-    assert.shouldIncludeURL(ROUTES.addCustomer)
+    assert.shouldIncludeURL(ROUTES.addCustomer);
+    assert.shouldContainText("label", "First Name");
+    assert.shouldContainText("label", "Last Name");
+    assert.shouldContainText("label", "Post Code");
+    assert.shouldBeVisible(addCustomerPage.firstNameField);
+    assert.shouldBeVisible(addCustomerPage.lastNameField);
+    assert.shouldBeVisible(addCustomerPage.postCodeField);
+    assert.shouldBeVisible(addCustomerPage.addCustomerButton);
   });
 
   it("Ensure the user is able to redirect to open account page when user clicks open account button", () => {
     element.click(bankManagerPage.openAccountButton);
-    assert.shouldIncludeURL(ROUTES.openAccount)
+    assert.shouldIncludeURL(ROUTES.openAccount);
+    assert.shouldContainText("label", "Customer :");
+    assert.shouldContainText("label", "Currency :");
+    assert.shouldBeVisible(openAccountPage.customerNameOpt);
+    assert.shouldBeVisible(openAccountPage.currencyOpt);
+    assert.shouldBeVisible(openAccountPage.processButton);
   });
 
   it("Ensure the user is able to redirect to customers page when user clicks customers button", () => {
     element.click(bankManagerPage.customersButton);
-    assert.shouldIncludeURL(ROUTES.customers)
+    assert.shouldIncludeURL(ROUTES.customers);
+    assert.shouldContainText("thead", "First Name");
+    assert.shouldContainText("thead", "Last Name");
+    assert.shouldContainText("thead", "Post Code");
+    assert.shouldContainText("thead", "Account Number");
+    assert.shouldContainText("thead", "Delete Customer");
+    assert.shouldBeVisible(customersPage.searchCustomerField);
   });
 });

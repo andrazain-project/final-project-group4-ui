@@ -13,16 +13,14 @@ describe("Customers", () => {
     routes.visit(ROUTES.customers);
   });
 
-  it("Ensure all components are visible", () => {
-    assert.shouldContainText("thead", "First Name");
-    assert.shouldContainText("thead", "Last Name");
-    assert.shouldContainText("thead", "Post Code");
-    assert.shouldContainText("thead", "Account Number");
-    assert.shouldContainText("thead", "Delete Customer");
-    assert.shouldBeVisible(customersPage.searchCustomerField);
+  it("Ensure user is able to search customer data", () => {
+    element.fillField(customersPage.searchCustomerField, "Hermoine");
+    assert.shouldContainText("tbody", "Hermoine");
   });
 
-  // it("Ensure first name column sorted when clicked", () => {
-  //     element.click(customersPage.sortyByFirstName)
-  // });
+  it("Ensure user is able to delete customer data", () => {
+    assert.shouldContainText("tbody", "Hermoine");
+    element.click(customersPage.deleteButton + ":first");
+    assert.shouldNotContainText("tbody", "Hermoine");
+  });
 });
